@@ -17,9 +17,15 @@ function loginHandiling(){
     obj["yp"]="bro";
     console.log(obj);
     if(pass===obj['pass']){
+        profileHandeler(obj)
         alert("access granted");
+        
     }
     else{
         alert("access denide");
     }
+}
+
+function profileHandeler(obj){
+    console.log(obj);
 }
