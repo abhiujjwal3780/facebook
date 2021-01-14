@@ -36,4 +36,5 @@ function submitupdate(){
     localStorage.setItem("useremail",JSON.stringify(user));
     alert("data submited successfyly");
     
+    
 }
