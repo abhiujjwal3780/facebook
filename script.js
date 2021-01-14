@@ -19,6 +19,8 @@ function loginHandiling(){
     if(pass===obj['pass']){
         profileHandeler(obj)
         alert("access granted");
+        localStorage.setItem("useremail",email);
+        document.getElementById("login").setAttribute('action','./profile.html');
         
     }
     else{
