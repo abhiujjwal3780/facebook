@@ -1,50 +1,39 @@
 var email = localStorage.getItem("useremail");
-let obj=JSON.parse(localStorage.getItem(email));
+let signup=JSON.parse(localStorage.getItem(email));
+console.log(signup.name);
+// setTimeout(() => {
+//     let variabletest=document.getElementById("name");
 
-document.getElementById("name").value = String(obj.name);
+// variabletest.value = signup.name;
+// }, 1000);
+let variabletest=document.getElementById("name");
+
+variabletest.value = signup.name;
 document.getElementById("inputEmail4").value=email;
-
-function submitdata(){
-
-    var name=document.getElementById("name").value;
-    var email=document.getElementById("inputEmail4").value;
-    var birthday=document.getElementById("birthday").value;
-    var Hobbies=document.getElementById("Hobbies").value;
-    var websites=document.getElementById("websites").value;
-    var profilepic=document.getElementById("profilepic").value;
-    var inputaddress=document.getElementById("inputAddress").value;
-    var inputcity=document.getElementById("inputCity").value;
-    var inputState=document.getElementById("inputState").value;
-
-    var n = obj.name;
-    var p = obj.pass;
-    let user = {
-    "Name":name,
-    "Email":email,
-    "Birthday":birthday,
-    "Hobbies":Hobbies,
-    "Websites":websites,
-    "Cover":'',
-    "Profilepic":profilepic,
-    "Address":inputaddress,
-    "City":inputcity,
-    "State":inputState,
-    "name":n,
-    "pass":p,
-    };
-    user.Cover = JSON.parse(localStorage.getItem('CoverImg'));
-    localStorage.removeItem('CoverImg');
-    localStorage.setItem(email,JSON.stringify(user));
-    alert("Data submited succesfully....");
-}
-
-document.querySelector('#cover').addEventListener("change",function(){
-    console.log(this.files);
-    const reader = new FileReader();
-    reader.readAsDataURL(this.files[0]);
-    reader.addEventListener("load",()=>{
-        var x = reader.result;
-        localStorage.setItem('CoverImg',JSON.stringify(x));
-    })
+function submitupdate(){
+     let name1=document.getElementById("name").value;
+     let emailid=document.getElementById("inputEmail4").value;
+     let birthday1=document.getElementById("birthday").value;
+     let Hobbies1=document.getElementById("Hobbies").value;
+    // console.log(Hobbies1);
+     let websites1=document.getElementById("websites").value;
+     let cover1=document.getElementById("cover").value;
+     let profilepic1=document.getElementById("profilepic").value;
+     let inputaddress1=document.getElementById("inputAddress").value;
+     let inputcity1=document.getElementById("inputCity").value;
+     let inputState1=document.getElementById("inputState").value;
+    let user={};
+    user.name=name1;
+    user.email=emailid;
+    user.birthday=birthday1;
+    user.Hobbies=Hobbies1;
+    user.websites=websites1;
+    user.cover=cover1;
+    user.profilepic=profilepic1;
+    user.inputaddress=inputaddress1;
+    user.inputcity=inputcity1;
+    user.inputState=inputState1;
+    localStorage.setItem("useremail",JSON.stringify(user));
+    alert("data submited successfyly");
     
-})
+}
